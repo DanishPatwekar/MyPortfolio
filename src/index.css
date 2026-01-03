@@ -3,7 +3,7 @@
 
 @layer utilities {
    .gradient{
-    background: linear-gradient(-45deg, #302b63, #00bf8f, #1cd8d2);
+    background: linear-gradient(-45deg, #302b61, #00bf8f, #1cd8d2);
    }
 }
 @theme{

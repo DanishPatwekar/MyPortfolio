@@ -1,9 +1,17 @@
 import '../index.css'
-import React, { useState } from 'react'
-import { FiMenu,FiX } from 'react-icons/fi';
+import React, { useEffect, useState, useRef } from 'react'
+import { FiMenu,FiX, } from 'react-icons/fi';
+import { FaWhatsapp } from "react-icons/fa";
+
+
 function Nav() {
+    const [visible,setvisible]=useState(true);
+    const [forcvisible,setForcevisible]=useState(false);
+
     const[isactive,SetActive]=useState("");
     const[menuopen,Setmenuopen]=useState(false);
+    const message ="Hello, I visited your portfolio and would like to connect with you.";
+    const whatsappurl= `https://wa.me/8862032096?text=${encodeURIComponent(message)}`;
     const menuitem=[
         {id:'home', lable:'Home'},
         {id:'about', lable:'About'},
@@ -15,6 +23,51 @@ function Nav() {
         Setmenuopen(false);
 
     };
+
+    const lastScrolly=useRef(0);
+    const timerID=useRef(null);
+    useEffect(()=>{
+    const homeSection=document.querySelector("#home");
+    const observer=new IntersectionObserver(
+    ([entry])=>{
+    if(entry.isIntersecting){
+    setForcevisible(true);
+    setvisible(true)}
+    else{
+        setForcevisible(false);
+    }
+    },{threshold : 0.1}
+    )
+    if(homeSection) observer.observe(homeSection);
+    return()=>{
+        if(homeSection) observer.unobserve(homeSection);
+    }
+    },[])
+
+    useEffect(()=>{
+        const handleScroll=()=>{
+            if(forcvisible){
+                setvisible(true);
+                return
+            }
+            const currentScrollY=window.scrollY;
+            if(currentScrollY>lastScrolly.current){
+                setvisible(false)
+            }else{
+                setvisible(true)
+                if(timerID.current)clearTimeout(timerID.current);
+                timerID.current=setTimeout(() => {
+                    setvisible(false);
+                }, 3000);
+            }
+            lastScrolly.current=currentScrollY;
+        }
+        window.addEventListener("scroll",handleScroll,{passive:true})
+        return ()=>{
+            window.removeEventListener("scroll",handleScroll)
+            if(timerID.current) clearTimeout(timerID.current)
+        }
+    },[forcvisible])
   return (
     <>
         <nav className='bg-gray-800 flex justify-between px-2 pt-2 md:py-0.5'>
@@ -47,7 +100,12 @@ function Nav() {
                     
                 </div>
                 <div>
-                    <img src="./dplogo.jpg" alt="dplogo" className='rounded-2xl w-8  h-8' />
+                    <a  href={whatsappurl}
+                        target="_blank"   rel="noopener noreferrer"
+                        style={{ color: "#25D366" }}>
+                     <FaWhatsapp size={40} color="#25D366" className='rounded-2xl w-11  h-10' />
+                    </a>
+                    
                 </div>
 
                 {/* mobile navbar close open code  */}

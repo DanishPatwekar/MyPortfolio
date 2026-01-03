@@ -22,7 +22,7 @@ function App() {
       <div className=' relative gradient text-white max-h-full h-full'>
         <Nav/>
         <MyCursor/>
-        <Particals/>
+        {/* <Particals/> */}
         <Home/>
         <About/>
         <Experience/>
