@@ -3,7 +3,7 @@ import {motion} from "framer-motion";
 import Particals from '../Components/Particals'
 
 const Home = () => {
-  const roles=useMemo(()=>["Data Engineer"],[])
+  const roles=useMemo(()=>["PL/SQL Developer","SQL Developer"]);
   const [index,setIndex]=useState(0);
   const [subindex,setSubindex]=useState(0);
   const [deleting,setDeleting]=useState(false);
@@ -31,15 +31,14 @@ const Home = () => {
         opacity-30 sm:opacity-20 md:opacity-10 blur-[100px] sm:blur-[130px] md:blur-[150px]
         animate-pulse'></div>
       </div>
-      
         <div className='relative z-10 w-full h-full max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2'>
           <div className='flex flex-col justify-center h-full text-center lg:text-left relative'>
             <div className='w-full lg:pr-24 mx-auto max-w-[48rem]'>
-              <motion.div className='mb-3 text-xl sm:text-4xl md:text-4xl font-semibold lg:text-5xl text-white tracking-wide min-height-[1.6em]'initial={{opacity:0 , y:12}} animate={{opacity:1,y:0}}transition={{duration:0.6}}>
+              <motion.div className="mb-3 text-xl sm:text-4xl md:text-4xl font-semibold lg:text-5xl text-white tracking-wide min-height-[1.6em]"initial={{opacity:0 , y:12}} animate={{opacity:1,y:0}}transition={{duration:0.6}}>
                 <span>
                   {roles[index].substring(0,subindex)}
                 </span>
-                <span className='inline-block w-[2px] ml-1 bg-white animation-pulse align-middle md:w-[3px]' style={{height:"1em"}}></span>
+                <span className="inline-block w-[2px] ml-1 bg-white animation-pulse align-middle md:w-[3px]" style={{height:"1em"}}></span>
               </motion.div>
               <motion.h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63] drop-shadow-lg'initial={{opacity:0 , y:40}} animate={{opacity:1,y:0}}transition={{duration:2}}>
                 Hello {"I'm "}
@@ -51,7 +50,7 @@ const Home = () => {
               </motion.p>
               <motion.div className='mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6' initial={{opacity:0 }} animate={{opacity:1}}transition={{delay:0.8,duration:0.8}}>
                 <a href="#project" className='px-6 py-3 rounded-full font-medium text-lg text-white bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63] shadow-lg hover:scale-105 transition-all'>View My Work</a>
-                <a href="" className=''>My Resume</a>
+                <a href="">My Resume</a>
               </motion.div>
 
             </div>
