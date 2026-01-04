@@ -1,7 +1,12 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import {motion} from "framer-motion";
 import Particals from '../Components/Particals'
+import { FaGithub, FaLinkedin, FaVoicemail } from 'react-icons/fa';
 
+const mediaIcons=[{Icon:FaLinkedin, href:"https://www.linkedin.com/in/danish-patwekar",lablr:"Linkedin"},
+  {Icon:FaGithub, href:"https://www.github.com/DanishPatwekar",lable:"github"},
+  {Icon:FaVoicemail, href:"danishpatwekar24@gmail.com",lable:"gmail"}
+]
 const Home = () => {
   const roles=useMemo(()=>["PL/SQL Developer","SQL Developer"]);
   const [index,setIndex]=useState(0);
@@ -50,8 +55,15 @@ const Home = () => {
               </motion.p>
               <motion.div className='mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6' initial={{opacity:0 }} animate={{opacity:1}}transition={{delay:0.8,duration:0.8}}>
                 <a href="#project" className='px-6 py-3 rounded-full font-medium text-lg text-white bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63] shadow-lg hover:scale-105 transition-all'>View My Work</a>
-                <a href="">My Resume</a>
+                <a href="/Resume_Danish_Patwekar.pdf" download className="px-6 py-3 rounded-full text-lg font-medium text-black bg-white hover:bg-gray-20 shadow-lg hover:scale-105 transition-all">My Resume</a>
               </motion.div>
+              <div className='mt-10 flex gap-5 text-2xl md:text-3xl justify-center lg:justify-start'>
+                {mediaIcons.map(({Icon,href,lable})=>(
+                  <motion.a href={href} key={lable}>
+                    <Icon/>
+                  </motion.a>
+                ))}
+              </div>
 
             </div>
           </div>
