@@ -1,17 +1,23 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import {motion} from "framer-motion";
 import Particals from '../Components/Particals'
-import { FaGithub, FaLinkedin, FaVoicemail } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
-const mediaIcons=[{Icon:FaLinkedin, href:"https://www.linkedin.com/in/danish-patwekar",lablr:"Linkedin"},
-  {Icon:FaGithub, href:"https://www.github.com/DanishPatwekar",lable:"github"},
-  {Icon:FaVoicemail, href:"danishpatwekar24@gmail.com",lable:"gmail"}
-]
+
 const Home = () => {
   const roles=useMemo(()=>["PL/SQL Developer","SQL Developer"]);
   const [index,setIndex]=useState(0);
   const [subindex,setSubindex]=useState(0);
   const [deleting,setDeleting]=useState(false);
+  const subject = "Hello";
+  const message = "Hello, I visited your portfolio and would like to connect with you.";
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=danishpatwekar24@gmail.com&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+  const mediaIcons=
+  [
+    {Icon:FaLinkedin, href:"https://www.linkedin.com/in/danish-patwekar",lablr:"Linkedin"},
+    {Icon:FaGithub, href:"https://www.github.com/DanishPatwekar",lable:"github"},{Icon:FaEnvelope, href:{gmailUrl},lable:"gmail"}
+
+  ]
 
   useEffect(()=>{
     const current=roles[index];
@@ -51,7 +57,7 @@ const Home = () => {
                 <span className='text-white font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl lg:whitespace-nowrap'>Er.Danish Patwekar</span>
               </motion.h1>
               <motion.p className=" mt-6 text-base sm:text-lg md:text-xl text-gray-300 mx-w-2xl mx-auto lg:mx-0" initial={{ opacity: 0, y: 20 }}  animate={{ opacity: 1, y: 0 }} transition={{ delay:0.4,duration: 2 }}>
-                  Experienced Data Engineer skilled in advanced SQL query optimization and performance tuning, Teradata enterprise data warehousing solutions, and large-scale distributed data processing using PySpark.
+                  PL/SQL Developer with hands-on experience in designing, developing, and optimizing Oracle database solutions. Skilled in writing efficient PL/SQL code, performance tuning, and ensuring data integrity. Passionate about building reliable, scalable database systems that align with business goals.
               </motion.p>
               <motion.div className='mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6' initial={{opacity:0 }} animate={{opacity:1}}transition={{delay:0.8,duration:0.8}}>
                 <a href="#project" className='px-6 py-3 rounded-full font-medium text-lg text-white bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63] shadow-lg hover:scale-105 transition-all'>View My Work</a>
