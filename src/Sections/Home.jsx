@@ -65,7 +65,7 @@ const Home = () => {
               </motion.div>
               <div className='mt-10 flex gap-5 text-2xl md:text-3xl justify-center lg:justify-start'>
                 {mediaIcons.map(({Icon,href,lable})=>(
-                  <motion.a href={href} key={lable}>
+                  <motion.a href={href} key={lable} target="_blank" rel="noopener noreferrer" whileHover={{y: [0, -10, 0, -10, 0],scale: 1.2,  }}      transition={{duration: 0.6, ease: "easeInOut"}}>
                     <Icon/>
                   </motion.a>
                 ))}
