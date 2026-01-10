@@ -2,10 +2,11 @@ import React, { useEffect, useMemo, useState } from 'react'
 import {motion} from "framer-motion";
 import Particals from '../Components/Particals'
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import danish from '../assets/danish.png';
 
 
 const Home = () => {
-  const roles=useMemo(()=>["PL/SQL Developer","SQL Developer"]);
+  const roles=useMemo(()=>["Software Developer","Full Stack Developer"]);
   const [index,setIndex]=useState(0);
   const [subindex,setSubindex]=useState(0);
   const [deleting,setDeleting]=useState(false);
@@ -14,8 +15,8 @@ const Home = () => {
   const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=danishpatwekar24@gmail.com&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
   const mediaIcons=
   [
-    {Icon:FaLinkedin, href:"https://www.linkedin.com/in/danish-patwekar",lablr:"Linkedin"},
-    {Icon:FaGithub, href:"https://www.github.com/DanishPatwekar",lable:"github"},{Icon:FaEnvelope, href:{gmailUrl},lable:"gmail"}
+    {Icon:FaLinkedin, href:"https://www.linkedin.com/in/danish-patwekar",lable:"Linkedin"},
+    {Icon:FaGithub, href:"https://www.github.com/DanishPatwekar",lable:"github"},{Icon:FaEnvelope, href:gmailUrl,lable:"gmail"}
 
   ]
 
@@ -66,12 +67,14 @@ const Home = () => {
               <div className='mt-10 flex gap-5 text-2xl md:text-3xl justify-center lg:justify-start'>
                 {mediaIcons.map(({Icon,href,lable})=>(
                   <motion.a href={href} key={lable} target="_blank" rel="noopener noreferrer" whileHover={{y: [0, -10, 0, -10, 0],scale: 1.2,  }}      transition={{duration: 0.6, ease: "easeInOut"}}>
-                    <Icon/>
+                    <Icon className="text-4xl cursor-pointer"/>
                   </motion.a>
                 ))}
               </div>
-
             </div>
+          </div>
+          <div>
+             <motion.img src={danish} className='absolute top-1/2 left-290 -translate-1/2 object-contain select-none pointer-events-none w-[850px] '/>
           </div>
         </div>
       
