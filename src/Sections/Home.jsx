@@ -2,10 +2,11 @@ import React, { useEffect, useMemo, useState } from 'react'
 import {motion} from "framer-motion";
 import Particals from '../Components/Particals'
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import top from '../assets/top.mp4';
 
 
 const Home = () => {
-  const roles=useMemo(()=>["Software Developer","Full Stack Developer"]);
+  const roles=useMemo(()=>["PL/SQL Developer","SQL Developer"]);
   const [index,setIndex]=useState(0);
   const [subindex,setSubindex]=useState(0);
   const [deleting,setDeleting]=useState(false);
@@ -71,6 +72,9 @@ const Home = () => {
                 ))}
               </div>
             </div>
+          </div>
+          <div className='relative rounded-md '>
+             <video src={top}controls  autoPlay  loop  muted  className='absolute top-1/2 left-50 md:left-120 lg:left-120 -translate-1/2 object-contain select-none pointer-events-none w-[500px]  h-full'/>
           </div>
         </div>
       
