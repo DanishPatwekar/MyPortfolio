@@ -43,7 +43,7 @@ const Home = () => {
         opacity-30 sm:opacity-20 md:opacity-10 blur-[100px] sm:blur-[130px] md:blur-[150px]
         animate-pulse'></div>
       </div>
-        <div className='relative z-10 w-full h-full max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2'>
+        <div className='relative z-10 w-full h-full max-w-7xl mx-auto px-2 grid grid-cols-1 lg:grid-cols-2'>
           <div className='flex flex-col justify-center h-full text-center lg:text-left relative'>
             <div className='w-full lg:pr-24 mx-auto max-w-[48rem]'>
               <motion.div className="mb-3 text-xl sm:text-4xl md:text-4xl font-semibold lg:text-5xl text-white tracking-wide min-height-[1.6em]"initial={{opacity:0 , y:12}} animate={{opacity:1,y:0}}transition={{duration:0.6}}>
@@ -55,7 +55,7 @@ const Home = () => {
               <motion.h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63] drop-shadow-lg'initial={{opacity:0 , y:40}} animate={{opacity:1,y:0}}transition={{duration:2}}>
                 Hello {"I'm "}
                 <br />
-                <span className='text-white font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl lg:whitespace-nowrap'>Er.Danish Patwekar</span>
+                <span className='text-white font-bold text-5xl sm:text-6xl md:text-7xl lg:text-7xl lg:whitespace-nowrap'>Er.Danish Patwekar</span>
               </motion.h1>
               <motion.p className=" mt-6 text-base sm:text-lg md:text-xl text-gray-300 mx-w-2xl mx-auto lg:mx-0" initial={{ opacity: 0, y: 20 }}  animate={{ opacity: 1, y: 0 }} transition={{ delay:0.4,duration: 2 }}>
                   PL/SQL Developer with hands-on experience in designing, developing, and optimizing Oracle database solutions. Skilled in writing efficient PL/SQL code, performance tuning, and ensuring data integrity. Passionate about building reliable, scalable database systems that align with business goals.
@@ -73,8 +73,8 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className='relative rounded-md '>
-             <video src={top}controls  autoPlay  loop  muted  className='absolute top-1/2 left-50 md:left-120 lg:left-120 -translate-1/2 object-contain select-none pointer-events-none w-[500px]  h-full'/>
+          <div className='relative rounded-md overflow-hidden w-[900px] h-full'>
+             <video src={top}controls  autoPlay  loop  muted  className='absolute top-1/2 left-50 md:left-120 lg:left-120 -translate-1/2 object-contain select-none pointer-events-none w-[800px]  h-full'/>
           </div>
         </div>
       
