@@ -10,6 +10,7 @@ import Skills from './Sections/Skills'
 import Footer from './Sections/Footer'
 import Contact from './Sections/Contact'
 import MyCursor from './Components/MyCursor'
+import Intro from './Components/Intro';
 
 
 
@@ -18,7 +19,11 @@ function App() {
   const [introDone, setIntroDone] = useState(false);
   return (
     <>
-
+       {!introDone && (<Intro onFinish={()=>setIntroDone(true)} /> )}
+        {
+          introDone &&(
+            
+          
       <div className=' relative gradient text-white max-h-full h-full'>
         <Nav/>
         <MyCursor/>
@@ -31,6 +36,8 @@ function App() {
         <Contact/>
         <Footer/>
       </div>
+      )
+        }
     </>
   )
 }
