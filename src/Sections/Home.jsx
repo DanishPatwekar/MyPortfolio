@@ -38,8 +38,8 @@ const Home = () => {
         h-[70vw] sm:h-[50vw] md:h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2]
         opacity-30 sm:opacity-20 md:opacity-10 blur-[100px] sm:blur-[130px] md:blur-[150px]
         animate-pulse'></div>
-        <div className='absolute top-60 right-30 w-[70vw] sm:w-[z-500vw] md:w-[40vw]
-        h-[70vw] sm:h-[50vw] md:h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-gradient-to-r from-[#302b61] via-[#007a5ccd] to-[#1cd8d2ab]
+        <div className='absolute top-40 right-30 w-[70vw] sm:w-[z-500vw] md:w-[40vw]
+        h-[70vw] sm:h-[50vw] md:h-[40vw] max-w-[700px] max-h-[700px] rounded-full bg-gradient-to-r from-[#302b61] via-[#007a5ccd] to-[#1cd8d2ab]
         opacity-30 sm:opacity-20 md:opacity-10 blur-[100px] sm:blur-[130px] md:blur-[150px]
         animate-pulse'></div>
       </div>
@@ -73,9 +73,16 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className='relative rounded-md overflow-hidden w-[900px] h-full'>
-             <video src={top}controls  autoPlay  loop  muted  className='absolute top-1/2 left-50 md:left-120 lg:left-120 -translate-1/2 object-contain select-none pointer-events-none w-[800px]  h-full'/>
-          </div>
+          <div className='relative top-1/8 left-1/4 rounded-[50%/50%] w-[550px] h-[650px] overflow-hidden'>
+  <video
+    src={top}
+    autoPlay
+    loop
+    muted
+    className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover select-none pointer-events-none w-full h-full'
+  />
+</div>
+
         </div>
       
     </section>

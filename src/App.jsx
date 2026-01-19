@@ -15,10 +15,10 @@ import MyCursor from './Components/MyCursor'
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [introDone, setIntroDone] = useState(false);
   return (
     <>
+
       <div className=' relative gradient text-white max-h-full h-full'>
         <Nav/>
         <MyCursor/>
