@@ -53,7 +53,7 @@ const Home = () => {
                 <span className="inline-block w-[2px] ml-1 bg-white animation-pulse align-middle md:w-[3px]" style={{height:"1em"}}></span>
               </motion.div>
               <motion.h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63] drop-shadow-lg'initial={{opacity:0 , y:40}} animate={{opacity:1,y:0}}transition={{duration:2}}>
-                Hello {"I'm "}
+                Hello, {"I'm "}
                 <br />
                 <span className='text-white font-bold text-5xl sm:text-6xl md:text-7xl lg:text-7xl lg:whitespace-nowrap'>Er.Danish Patwekar</span>
               </motion.h1>
@@ -73,15 +73,15 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className='relative top-1/8 left-1/4 rounded-[50%/50%] w-[550px] h-[650px] overflow-hidden'>
-  <video
-    src={top}
-    autoPlay
-    loop
-    muted
-    className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover select-none pointer-events-none w-full h-full'
-  />
-</div>
+          <div className='hidden lg:block relative top-1/8 left-1/4 rounded-[50%/50%] w-[500px] h-[600px] overflow-hidden '>
+              <video
+                src={top}
+                autoPlay
+                loop
+                muted
+                className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover select-none pointer-events-none w-full h-full'
+              />
+          </div>
 
         </div>
       

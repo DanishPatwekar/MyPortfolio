@@ -21,11 +21,11 @@ export default function Intro({ onFinish }) {
     if (index < greet.length - 1) {
       const id = setInterval(() => {
         setIndex((i) => i + 1);
-      }, 350);
+      }, 650);
 
       return () => clearInterval(id);
     } else {
-      const last = setTimeout(() => setVisible(false), 400);
+      const last = setTimeout(() => setVisible(false), 800);
       return () => clearTimeout(last);
     }
   }, [index, greet.length]);
