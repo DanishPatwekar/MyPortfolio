@@ -1,0 +1,15 @@
+#moveleft{
+    animation: fromleft 0.5s ease-in-out;
+    /* background-color: rgb(37, 156, 247); */
+}
+
+@keyframes fromleft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

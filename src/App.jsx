@@ -30,9 +30,9 @@ function App() {
         {/* <Particals/> */}
         <Home/>
         <About/>
+        <Skills/>
         <Experience/>
         <Projects/>
-        <Skills/>
         <Contact/>
         <Footer/>
       </div>
